@@ -2,7 +2,7 @@
 
 ## 1) Make sure Docker is installed
 
-## Make sure to create folder in `C:\airflow`
+Make sure to create folder in `C:\airflow`
 
 ## 2) Create a folder for Airflow
     mkdir airflow
