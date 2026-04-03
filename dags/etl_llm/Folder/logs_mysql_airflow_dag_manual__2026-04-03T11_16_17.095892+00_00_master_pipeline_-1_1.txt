@@ -1,0 +1,100 @@
+::group::Log message source detailssources=["/opt/airflow/logs/dag_id=mysql_airflow_dag/run_id=manual__2026-04-03T11:16:17.095892+00:00/task_id=master_pipeline/attempt=1.log"] 
+::endgroup::
+[2026-04-03T11:16:18.176320Z] INFO - Stats instance was created in PID 7 but accessed in PID 4898. Re-initializing.
+[2026-04-03T11:16:18.832966Z] INFO - DAG bundles loaded: dags-folder, example_dags
+[2026-04-03T11:16:18.835763Z] INFO - Filling up the DagBag from /opt/airflow/dags/mysql_dag.py
+[2026-04-03T11:16:18.932402Z] INFO - Task instance is in running state
+[2026-04-03T11:16:18.933812Z] INFO -  Previous state of the Task instance: TaskInstanceState.QUEUED
+[2026-04-03T11:16:18.934485Z] INFO - Current task name:master_pipeline
+[2026-04-03T11:16:18.934498Z] INFO - Tmp dir root location: /tmp
+[2026-04-03T11:16:18.935020Z] INFO - Dag name:mysql_airflow_dag
+[2026-04-03T11:16:18.937302Z] INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/airflow/dags/etl_llm/etl_pipeline.py ']
+[2026-04-03T11:16:18.938955Z] INFO - Output:
+[2026-04-03T11:16:21.033265Z] INFO - /home/airflow/.local/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.6.3) or chardet (6.0.0.post1)/charset_normalizer (3.4.5) doesn't match a supported version!
+[2026-04-03T11:16:21.033557Z] INFO -   warnings.warn(
+[2026-04-03T11:16:31.190504Z] INFO - 2026-04-03 11:16:31,190 [INFO] *************** ETL Pipeline START 15 ***************
+[2026-04-03T11:16:31.190829Z] INFO - 2026-04-03 11:16:31,190 [INFO] *************** connecting to MySQL to fetch process config ***************
+[2026-04-03T11:16:31.190941Z] INFO - 2026-04-03 11:16:31,190 [INFO] Fetching process config for 'TRIP_DATA_SAMPLE_PS' from ITS_MTD.PROCESS_CONTROL_TABLE
+[2026-04-03T11:16:31.231233Z] INFO - 2026-04-03 11:16:31,230 [INFO] Engine created: MySQL source (mysql)
+[2026-04-03T11:16:31.231946Z] INFO - 2026-04-03 11:16:31,231 [INFO] Engine(mysql://root:***@host.docker.internal:3306/ITS_MTD)
+[2026-04-03T11:16:31.283168Z] INFO - 2026-04-03 11:16:31,282 [INFO] Connecting to MySQL to fetch source schema for ITS.trip_sample_table_py
+[2026-04-03T11:16:31.283927Z] INFO - 2026-04-03 11:16:31,283 [INFO] Engine created: MySQL source (mysql)
+[2026-04-03T11:16:31.284140Z] INFO - 2026-04-03 11:16:31,283 [INFO] Engine(mysql://root:***@host.docker.internal:3306/ITS_MTD)
+[2026-04-03T11:16:31.324194Z] INFO - 2026-04-03 11:16:31,323 [INFO] Fetched 13 columns from source schema
+[2026-04-03T11:16:31.324890Z] INFO - 2026-04-03 11:16:31,324 [INFO] Columns from Source Schema: [{'column_name': 'trip_id', 'data_type': 'varchar', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': 255}, {'column_name': 'date', 'data_type': 'date', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': None}, {'column_name': 'city_id', 'data_type': 'varchar', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': 255}, {'column_name': 'passenger_type', 'data_type': 'varchar', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': 255}, {'column_name': 'distance_travelled_km_', 'data_type': 'int', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': None}, {'column_name': 'fare_amount', 'data_type': 'int', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': None}, {'column_name': 'passenger_rating', 'data_type': 'int', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': None}, {'column_name': 'driver_rating', 'data_type': 'int', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': None}, {'column_name': 's_file_name', 'data_type': 'varchar', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': 1000}, {'column_name': 's_file_date', 'data_type': 'datetime', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': None}, {'column_name': 'el_createddate', 'data_type': 'datetime', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': None}, {'column_name': 'el_modifieddate', 'data_type': 'datetime', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': None}, {'column_name': 'el_action', 'data_type': 'varchar', 'is_nullable': 'YES', 'column_key': '', 'character_maximum_length': 20}]
+[2026-04-03T11:16:31.325165Z] INFO - 2026-04-03 11:16:31,324 [INFO] Ensuring tables exist in Postgres: workspace.trip_sample_table
+[2026-04-03T11:16:31.412039Z] INFO - 2026-04-03 11:16:31,411 [INFO] Engine created: Postgresql source (postgresql)
+[2026-04-03T11:16:31.412340Z] INFO - 2026-04-03 11:16:31,411 [INFO] Engine(postgresql://postgres:***@host.docker.internal:5432/ITS)
+[2026-04-03T11:16:31.800866Z] INFO - 2026-04-03 11:16:31,800 [INFO] Generating CREATE TABLE statement for workspace.trip_sample_table using LLM
+[2026-04-03T11:16:32.838919Z] INFO - 2026-04-03 11:16:32,838 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-04-03T11:16:32.880131Z] INFO - 2026-04-03 11:16:32,879 [INFO] LLM raw output:
+[2026-04-03T11:16:32.880437Z] INFO - CREATE TABLE IF NOT EXISTS workspace.trip_sample_table (
+[2026-04-03T11:16:32.880541Z] INFO -   trip_id TEXT,
+[2026-04-03T11:16:32.880621Z] INFO -   date TIMESTAMP,
+[2026-04-03T11:16:32.880683Z] INFO -   city_id TEXT,
+[2026-04-03T11:16:32.880751Z] INFO -   passenger_type TEXT,
+[2026-04-03T11:16:32.880870Z] INFO -   distance_travelled_km_ INTEGER,
+[2026-04-03T11:16:32.880953Z] INFO -   fare_amount INTEGER,
+[2026-04-03T11:16:32.881031Z] INFO -   passenger_rating INTEGER,
+[2026-04-03T11:16:32.881240Z] INFO -   driver_rating INTEGER,
+[2026-04-03T11:16:32.881357Z] INFO -   s_file_name TEXT,
+[2026-04-03T11:16:32.881453Z] INFO -   s_file_date TIMESTAMP,
+[2026-04-03T11:16:32.881550Z] INFO -   el_createddate TIMESTAMP,
+[2026-04-03T11:16:32.881641Z] INFO -   el_modifieddate TIMESTAMP,
+[2026-04-03T11:16:32.881772Z] INFO -   el_action TEXT
+[2026-04-03T11:16:32.881870Z] INFO - );
+[2026-04-03T11:16:32.881962Z] INFO - 2026-04-03 11:16:32,880 [INFO] Generated create SQL for workspace.trip_sample_table
+[2026-04-03T11:16:32.882045Z] INFO - 2026-04-03 11:16:32,880 [INFO] Creating main table: workspace.trip_sample_table
+[2026-04-03T11:16:32.889983Z] INFO - 2026-04-03 11:16:32,889 [INFO] Creating staging table: workspace.trip_sample_table_stg
+[2026-04-03T11:16:32.902916Z] INFO - 2026-04-03 11:16:32,902 [INFO] Starting incremental load for ITS.trip_sample_table_py
+[2026-04-03T11:16:32.903804Z] INFO - 2026-04-03 11:16:32,903 [INFO] Engine created: MySQL source (mysql)
+[2026-04-03T11:16:32.903960Z] INFO - 2026-04-03 11:16:32,903 [INFO] Engine(mysql://root:***@host.docker.internal:3306/ITS_MTD)
+[2026-04-03T11:16:32.904648Z] INFO - 2026-04-03 11:16:32,904 [INFO] Engine created: Postgresql source (postgresql)
+[2026-04-03T11:16:32.904798Z] INFO - 2026-04-03 11:16:32,904 [INFO] Engine(postgresql://postgres:***@host.docker.internal:5432/ITS)
+[2026-04-03T11:16:32.979978Z] INFO - 2026-04-03 11:16:32,979 [INFO] Extracted 1000 rows from source
+[2026-04-03T11:16:33.427799Z] INFO - 2026-04-03 11:16:33,427 [INFO] Loaded 1000 rows into staging table
+[2026-04-03T11:16:33.443164Z] INFO - 2026-04-03 11:16:33,442 [INFO] MERGE complete into workspace.trip_sample_table
+[2026-04-03T11:16:33.443534Z] INFO - 2026-04-03 11:16:33,443 [INFO] Updating process control for process : TRIP_DATA_SAMPLE_PS (in ITS_MTD.PROCESS_CONTROL_TABLE)
+[2026-04-03T11:16:33.444542Z] INFO - 2026-04-03 11:16:33,444 [INFO] Engine created: MySQL source (mysql)
+[2026-04-03T11:16:33.444730Z] INFO - 2026-04-03 11:16:33,444 [INFO] Engine(mysql://root:***@host.docker.internal:3306/ITS_MTD)
+[2026-04-03T11:16:33.445309Z] INFO - 2026-04-03 11:16:33,445 [INFO] Engine created: Postgresql source (postgresql)
+[2026-04-03T11:16:33.445478Z] INFO - 2026-04-03 11:16:33,445 [INFO] Engine(postgresql://postgres:***@host.docker.internal:5432/ITS)
+[2026-04-03T11:16:33.781193Z] INFO - 2026-04-03 11:16:33,780 [INFO] Updated process control table for TRIP_DATA_SAMPLE_PS with new enddate 2025-12-26 00:00:00
+[2026-04-03T11:16:33.782260Z] INFO - 2026-04-03 11:16:33,780 [INFO] Updated Query :
+[2026-04-03T11:16:33.782575Z] INFO -         UPDATE ITS_MTD.PROCESS_CONTROL_TABLE
+[2026-04-03T11:16:33.782860Z] INFO -         SET enddate = :end_date
+[2026-04-03T11:16:33.782982Z] INFO -         WHERE process_name = :pname and target_table_name = :target_table
+[2026-04-03T11:16:33.783079Z] INFO - 
+[2026-04-03T11:16:33.783373Z] INFO - 2026-04-03 11:16:33,782 [INFO] *************** ETL Pipeline COMPLETE ***************
+[2026-04-03T11:16:33.783468Z] INFO - PG_PORT :  5432
+[2026-04-03T11:16:33.783552Z] INFO - {'BATCH_ID': '20260209001', 'SOURCE_SYSTEM': 'PSSQL', 'TARGET_SYSTEM': 'SNOWFLAKE', 'SOURCE_TABLE_NAME': 'trip_sample_table_py', 'TARGET_TABLE_NAME': 'TRIP_SAMPLE_TABLE', 'STARTDATE': datetime.datetime(2025, 12, 20, 10, 0), 'ENDDATE': datetime.datetime(1900, 1, 1, 0, 0), 'ACTIVE_FLAG': 'Y', 'PRIMARY_KEY': 'trip_id', '_CONDITION': 'date', 'SQL_STATEMENT': '', 'RUN_SEQ': 1, 'SOURCE_DATABASE': 'ITS', 'SOURCE_SCHEMA': 'ITS', 'SOURCE_SERVER': '127.0.0.1', 'TARGET_DATABASE': 'ITS', 'TARGET_SCHEMA': 'workspace', 'FETCH_SIZE': 1000, 'POOL_SIZE': 10, 'TIMEZONE': 'PST', 'DESCRIPTION': 'Daily data sync from PostgreSQL to SNOWFLAKE', 'FREQUENCY': 'DAILY', 'DELETE_FLAG': 'N', 'EL_CREATED_DATE': datetime.datetime(2025, 12, 20, 10, 30), 'EL_UPDATED_DATE': datetime.datetime(2025, 12, 20, 10, 30), 'LOAD_TYPE': 'FULL', 'ACTION_TYPE': 'INSERT', 'SOURCE_TABLE_TYPE': 'CSV', 'GROUP_NAME': 'TRIP_DATA_SAMPLE_PS', 'PROCESS_NAME': 'TRIP_DATA_SAMPLE_PS', 'MTD_TYPE': 'N/A', 'REPROCESS_FLAG': 0, 'FILE_SYSTEM_ID': 1, 'SP_START_PARM': '', 'SP_END_PARM': '', 'SP_SRC_SEQ': 1, 'SOURCE_WAREHOUSE': '', 'TARGET_WAREHOUSE': '', 'EXTRACT_TYPE': 'INCREMENTAL', 'DATA_STAGE': 'S3_STAGE', 'PROCESS_TYPE': 'PSSQL_TO_SNOWFLAKE', 'PERIOD': 1, 'PERIOD_DIF': '', 'NOTIFICATION_TYPE': '', 'QA_FLAG': 'Y', 'DATE_FORMAT': '', 'SHEET_NAME': 'Sheet1', 'CONDITION_2': '', 'STARTDATE_2': datetime.datetime(2025, 12, 20, 10, 0), 'ENDDATE_2': datetime.datetime(2025, 12, 20, 10, 0), 'NO_RECORD_SQL': '', 'DISTINCT_FLAG': 1, 'TARGET_TABLE_TYPE': 'TABLE', 'INC_COL_TYPE': '', 'NUMERIC_INC_VALUE': ''}
+[2026-04-03T11:16:33.783636Z] INFO - create_sql :  CREATE TABLE IF NOT EXISTS workspace.trip_sample_table (
+[2026-04-03T11:16:33.783681Z] INFO -   trip_id TEXT,
+[2026-04-03T11:16:33.783722Z] INFO -   date TIMESTAMP,
+[2026-04-03T11:16:33.783762Z] INFO -   city_id TEXT,
+[2026-04-03T11:16:33.783802Z] INFO -   passenger_type TEXT,
+[2026-04-03T11:16:33.783844Z] INFO -   distance_travelled_km_ INTEGER,
+[2026-04-03T11:16:33.783886Z] INFO -   fare_amount INTEGER,
+[2026-04-03T11:16:33.783926Z] INFO -   passenger_rating INTEGER,
+[2026-04-03T11:16:33.783966Z] INFO -   driver_rating INTEGER,
+[2026-04-03T11:16:33.784004Z] INFO -   s_file_name TEXT,
+[2026-04-03T11:16:33.784042Z] INFO -   s_file_date TIMESTAMP,
+[2026-04-03T11:16:33.784078Z] INFO -   el_createddate TIMESTAMP,
+[2026-04-03T11:16:33.784119Z] INFO -   el_modifieddate TIMESTAMP,
+[2026-04-03T11:16:33.784149Z] INFO -   el_action TEXT
+[2026-04-03T11:16:33.784179Z] INFO - );
+[2026-04-03T11:16:33.784211Z] INFO - src_query :  SELECT * FROM ITS.trip_sample_table_py WHERE date > '1900-01-01 00:00:00'
+[2026-04-03T11:16:33.784244Z] INFO - merge_sql :
+[2026-04-03T11:16:33.784276Z] INFO -         INSERT INTO workspace.trip_sample_table
+[2026-04-03T11:16:33.784308Z] INFO -         SELECT *
+[2026-04-03T11:16:33.784339Z] INFO -         FROM workspace.trip_sample_table_stg s
+[2026-04-03T11:16:33.784372Z] INFO -         WHERE NOT EXISTS (
+[2026-04-03T11:16:33.784403Z] INFO -             SELECT 1
+[2026-04-03T11:16:33.784434Z] INFO -             FROM workspace.trip_sample_table t
+[2026-04-03T11:16:33.784466Z] INFO -             WHERE t.trip_id = s.trip_id)
+[2026-04-03T11:16:33.784498Z] INFO - 
+[2026-04-03T11:16:35.293588Z] INFO - Command exited with return code 0
+[2026-04-03T11:16:35.294632Z] INFO - Pushing xcomti=RuntimeTaskInstance(id=UUID('019d530e-e065-7d6c-abce-ca23a236f987'), task_id='master_pipeline', dag_id='mysql_airflow_dag', run_id='manual__2026-04-03T11:16:17.095892+00:00', try_number=1, dag_version_id=UUID('019d4dc3-d0fd-7d80-970d-b7777c261365'), map_index=-1, hostname='2ccd46dbbeb3', context_carrier={}, task=<Task(BashOperator): master_pipeline>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=0, start_date=datetime.datetime(2026, 4, 3, 11, 16, 18, 117319, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None) 
+[2026-04-03T11:16:35.386398Z] INFO - Task instance in success state
+[2026-04-03T11:16:35.387122Z] INFO -  Previous state of the Task instance: TaskInstanceState.RUNNING
+[2026-04-03T11:16:35.387781Z] INFO - Task operator:<Task(BashOperator): master_pipeline>

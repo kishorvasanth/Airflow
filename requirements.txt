@@ -1,0 +1,6 @@
+langchain 
+langgraph
+sentence-transformers 
+langgraph
+sqlalchemy
+langchain_groq
